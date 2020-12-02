@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<h:outputStylesheet library="css" name="styles.css" />
+	<title>Products</title>
+</h:head>
+<h:body>
+	<h1>Products</h1>
+	<h:form>
+		<h:dataTable value="#{productList.refreshList()}" var="p"
+			styleClass="products" columnClasses="odd,even">
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{msgs.editColumn}" style="font-weight: bold" />
+				</f:facet>
+				<h:selectBooleanCheckbox value="#{p.editable}" onclick="submit()" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Product Code"
+						style="font-weight: bold" />
+				</f:facet>
+				<h:outputText value="#{p.productCode}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Product Name"
+						style="font-weight: bold" />
+				</f:facet>
+				<h:inputText value="#{p.productName}" rendered="#{p.editable}"
+					size="10" />
+				<h:outputText value="#{p.productName}" rendered="#{not p.editable}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Product Line"
+						style="font-weight: bold" />
+				</f:facet>
+				<h:inputText value="#{p.productLine}" rendered="#{p.editable}"
+					size="10" />
+				<h:outputText value="#{p.productLine}" rendered="#{not p.editable}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Product Scale"
+						style="font-weight: bold" />
+				</f:facet>
+				<h:inputText value="#{p.productScale}" rendered="#{p.editable}"
+					size="10" />
+				<h:outputText value="#{p.productScale}" rendered="#{not p.editable}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Product Vendor"
+						style="font-weight: bold" />
+				</f:facet>
+				<h:inputText value="#{p.productVendor}" rendered="#{p.editable}"
+					size="10" />
+				<h:outputText value="#{p.productVendor}" rendered="#{not p.editable}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Product Description"
+						style="font-weight: bold" />
+				</f:facet>
+				<h:inputText value="#{p.productDescription}" rendered="#{p.editable}"
+					size="10" />
+				<h:outputText value="#{p.productDescription}" rendered="#{not p.editable}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Quantity in Stock"
+						style="font-weight: bold" />
+				</f:facet>
+				<h:inputText value="#{p.quantityInStock}" rendered="#{p.editable}"
+					size="10" />
+				<h:outputText value="#{p.quantityInStock}" rendered="#{not p.editable}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Buy Price"
+						style="font-weight: bold" />
+				</f:facet>
+				<h:inputText value="#{p.buyPrice}" rendered="#{p.editable}"
+					size="10" />
+				<h:outputText value="#{p.buyPrice}" rendered="#{not p.editable}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="MSRP"
+						style="font-weight: bold" />
+				</f:facet>
+				<h:inputText value="#{p.msrp}" rendered="#{p.editable}"
+					size="10" />
+				<h:outputText value="#{p.msrp}" rendered="#{not p.editable}" />
+			</h:column>
+			
+			
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{msgs.productDeleteColumn}"
+						style="font-weight: bold" />
+				</f:facet>
+				<h:commandButton value="#{msgs.productDeleteColumn}"
+					action="#{supplierList.deleteRow(p)}" />
+			</h:column>
+		</h:dataTable>
+		<br/>
+		<h:commandButton value="#{msgs.save}" action="#{supplierList.save}"/>
+		<h:commandButton value="Add New" action="addSupplier"/>
+	</h:form>
+	<ui:debug/>
+</h:body>
+</html>
