@@ -5,7 +5,8 @@
 -->
 	    <jta-data-source>java:jboss/datasources/MySQLDS</jta-data-source>
 		<!-- <class>ca.bcit.infosys.supplier.Supplier</class> -->
-	      <class>infosys.finalexam.sreid.Product</class>
+	      <class>infosys.finalexam.sreid.product.Product</class>
+	      <class>infosys.finalexam.sreid.customer.Customer</class>
       <properties>
          <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect"/>
          <property name="hibernate.hbm2ddl.auto" value="validate"/>

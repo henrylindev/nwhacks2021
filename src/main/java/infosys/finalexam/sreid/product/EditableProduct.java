@@ -1,7 +1,8 @@
-package infosys.finalexam.sreid;
+package infosys.finalexam.sreid.product;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+
 
 public class EditableProduct extends Product implements Serializable {
 

@@ -1,19 +1,28 @@
-package infosys.finalexam.sreid;
+package infosys.finalexam.sreid.product;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.persistence.Transient;
+
 import org.hibernate.annotations.Type;
+
 @Entity
 @Table(name="products")
-
+@Named("product")
+@SessionScoped
 public class Product implements Serializable {
 
+	@Transient
+	@Inject private ProductManager productManager;
+	
 	@Id
 	@Column(name="productCode")
 	protected String productCode;
@@ -56,6 +65,18 @@ public class Product implements Serializable {
 		this.quantityInStock = quantityInStock;
 		this.buyPrice = buyPrice;
 		this.msrp = msrp;
+	}
+	
+	public Product(EditableProduct p) {
+		this.productCode = p.getProductCode();
+		this.productName = p.getProductName();
+		this.productLine = p.getProductLine(); 
+		this.productScale = p.getProductScale();
+		this.productVendor = p.getProductVendor();
+		this.productDescription = p.getProductDescription(); 
+		this.quantityInStock = p.getQuantityInStock();
+		this.buyPrice = p.getBuyPrice();
+		this.msrp = p.getMsrp();
 	}
 
 	public String getProductCode() {
@@ -130,7 +151,10 @@ public class Product implements Serializable {
 		this.msrp = msrp;
 	}
 
-	
+	public String addProduct() {
+		productManager.persist(this);
+		return "displayProducts";
+	}
 	
 	
 	

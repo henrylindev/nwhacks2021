@@ -45,9 +45,7 @@ CREATE TABLE `customers` (
   `country` varchar(50) NOT NULL,
   `salesRepEmployeeNumber` int(11) DEFAULT NULL,
   `creditLimit` decimal(10,2) DEFAULT NULL,
-  PRIMARY KEY (`customerNumber`),
-  KEY `salesRepEmployeeNumber` (`salesRepEmployeeNumber`),
-  CONSTRAINT `customers_ibfk_1` FOREIGN KEY (`salesRepEmployeeNumber`) REFERENCES `employees` (`employeeNumber`)
+  PRIMARY KEY (`customerNumber`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `customers` */
@@ -7695,9 +7693,7 @@ CREATE TABLE `products` (
   `quantityInStock` smallint(6) NOT NULL,
   `buyPrice` decimal(10,2) NOT NULL,
   `MSRP` decimal(10,2) NOT NULL,
-  PRIMARY KEY (`productCode`),
-  KEY `productLine` (`productLine`),
-  CONSTRAINT `products_ibfk_1` FOREIGN KEY (`productLine`) REFERENCES `productlines` (`productLine`)
+  PRIMARY KEY (`productCode`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `products` */

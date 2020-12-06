@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+   <h:head>
+      <title>Enter Product</title>
+   </h:head>
+   <h:body>
+      <h:form>  
+         <h1>Enter Product</h1>
+         <h3>Product Code</h3>
+         <p><h:inputText value="#{product.productCode}"/></p>
+         <h3>Product Name</h3>
+         <p><h:inputText value="#{product.productName}"/></p>
+         <h3>Product Line</h3>
+         <p><h:inputText value="#{product.productLine}"/></p>
+         <h3>Product Scale</h3>
+         <p><h:inputText value="#{product.productScale}"/></p>
+         <h3>Product Vendor</h3>
+         <p><h:inputText value="#{product.productVendor}"/></p>
+         <h3>Product Description</h3>
+         <p><h:inputText value="#{product.productDescription}"/></p>
+         <h3>Quantity in Stock</h3>
+         <p><h:inputText value="#{product.quantityInStock}"/></p>
+         <h3>Buy Price</h3>
+         <p><h:inputText value="#{product.buyPrice}"/></p>
+         <h3>MSRP</h3>
+         <p><h:inputText value="#{product.msrp}"/></p>
+         
+         <p><h:commandButton value="Add Product" action="#{product.addProduct()}"/></p>
+      </h:form>
+      
+   </h:body>
+</html>

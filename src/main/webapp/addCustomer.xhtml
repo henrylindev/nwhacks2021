@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+   <h:head>
+      <title>Enter Customer</title>
+   </h:head>
+   <h:body>
+      <h:form>  
+         <h1>Enter Customer</h1>
+         <h3>Customer Number</h3>
+         <p><h:inputText value="#{customer.customerNumber}"/></p>
+         <h3>Customer Name</h3>
+         <p><h:inputText value="#{customer.customerName}"/></p>
+         <h3>Customer Last Name</h3>
+         <p><h:inputText value="#{customer.contactLastName}"/></p>
+         <h3>Customer First Name</h3>
+         <p><h:inputText value="#{customer.contactFirstName}"/></p>
+         <h3>Customer Phone</h3>
+         <p><h:inputText value="#{customer.phone}"/></p>
+         <h3>Customer Address Line 1</h3>
+         <p><h:inputText value="#{customer.addressLine1}"/></p>
+         <h3>Customer Address Line 2</h3>
+         <p><h:inputText value="#{customer.addressLine2}"/></p>
+         <h3>Customer City</h3>
+         <p><h:inputText value="#{customer.city}"/></p>
+         <h3>Customer State</h3>
+         <p><h:inputText value="#{customer.state}"/></p>
+         <h3>Postal Code</h3>
+         <p><h:inputText value="#{customer.postalCode}"/></p>
+         <h3>Country</h3>
+         <p><h:inputText value="#{customer.country}"/></p>
+         <h3>Sales Rep Employee Number</h3>
+         <p><h:inputText value="#{customer.salesRepEmployeeNumber}"/></p>
+         <h3>Credit Limit</h3>
+         <p><h:inputText value="#{customer.creditLimit}"/></p>
+         
+         <p><h:commandButton value="Add Customer" action="#{customer.addCustomer()}"/></p>
+      </h:form>
+      
+   </h:body>
+</html>

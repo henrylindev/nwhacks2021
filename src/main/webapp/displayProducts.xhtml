@@ -12,7 +12,12 @@
 <h:body>
 	<h1>Products</h1>
 	<h:form>
-		<h:dataTable value="#{productList.refreshList()}" var="p"
+	
+	<p>Enter search term.</p>
+      <h:inputText value="#{productList.searchTerm}"/>
+      <p><h:commandButton value="Search" action="#{productList.search}"/></p>
+	
+		<h:dataTable value="#{productList.list}" var="p"
 			styleClass="products" columnClasses="odd,even">
 			<h:column>
 				<f:facet name="header">
@@ -108,12 +113,13 @@
 						style="font-weight: bold" />
 				</f:facet>
 				<h:commandButton value="#{msgs.productDeleteColumn}"
-					action="#{supplierList.deleteRow(p)}" />
+					action="#{productList.deleteProduct(p)}" />
 			</h:column>
 		</h:dataTable>
 		<br/>
-		<h:commandButton value="#{msgs.save}" action="#{supplierList.save}"/>
-		<h:commandButton value="Add New" action="addSupplier"/>
+		<h:commandButton value="#{msgs.save}" action="#{productList.save()}"/>
+		<h:commandButton value="Display Customers" action="#{productList.goToCustomers()}"/>
+		<h:commandButton value="Add Product" action="#{productList.addProduct()}"/>
 	</h:form>
 	<ui:debug/>
 </h:body>
