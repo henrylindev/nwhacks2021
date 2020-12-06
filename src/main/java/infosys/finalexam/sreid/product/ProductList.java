@@ -74,6 +74,11 @@ public class ProductList implements Serializable {
         return "displayOrders";
     }
     
+    public String goToOrderDetails() {
+        conversation.end();
+        return "displayOrderDetails";
+    }
+    
     public String addProduct() {
         conversation.end();
         return "addProduct";

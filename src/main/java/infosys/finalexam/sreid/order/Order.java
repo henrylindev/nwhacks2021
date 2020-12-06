@@ -61,10 +61,9 @@ public class Order implements Serializable {
 	
 	public Order() {}
 
-	public Order(OrderManager orderManager, int orderNumber, Date orderDate, Date requiredDate, Date shippedDate,
+	public Order(int orderNumber, Date orderDate, Date requiredDate, Date shippedDate,
 			String status, String comments, int customerNumber) {
 		super();
-		this.orderManager = orderManager;
 		this.orderNumber = orderNumber;
 		this.orderDate = orderDate;
 		this.requiredDate = requiredDate;

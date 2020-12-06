@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+   <h:head>
+      <title>Enter Order Detail</title>
+   </h:head>
+   <h:body>
+      <h:form>  
+         <h1>Enter Order Detail</h1>
+         <h3>Order Number</h3>
+         <p><h:inputText value="#{orderDetail.orderNumber}"/></p>
+         <h3>Product Code</h3>
+         <p><h:inputText value="#{orderDetail.productCode}"/></p>
+         <h3>Quantity Ordered</h3>
+         <p><h:inputText value="#{orderDetail.quantityOrdered}"/></p>
+         <h3>Price Each</h3>
+         <p><h:inputText value="#{orderDetail.priceEach}"/></p>
+         <h3>Order Line Number</h3>
+         <p><h:inputText value="#{orderDetail.orderLineNumber}"/></p>
+         
+         <p><h:commandButton value="Add Order Detail" action="#{orderDetail.addOrderDetail()}"/></p>
+      </h:form>
+      
+   </h:body>
+</html>

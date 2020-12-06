@@ -24,7 +24,6 @@ public class OrderManager implements Serializable {
     }
 	
 	public void persist(Order order) {
-		System.out.println("changing: " + order.getStatus());
     	em.persist(order);
     }
 	
