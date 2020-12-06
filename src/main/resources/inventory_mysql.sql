@@ -412,9 +412,7 @@ CREATE TABLE `orderdetails` (
   `priceEach` decimal(10,2) NOT NULL,
   `orderLineNumber` smallint(6) NOT NULL,
   PRIMARY KEY (`orderNumber`,`productCode`),
-  KEY `productCode` (`productCode`),
-  CONSTRAINT `orderdetails_ibfk_1` FOREIGN KEY (`orderNumber`) REFERENCES `orders` (`orderNumber`),
-  CONSTRAINT `orderdetails_ibfk_2` FOREIGN KEY (`productCode`) REFERENCES `products` (`productCode`)
+  KEY `productCode` (`productCode`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `orderdetails` */
@@ -6426,8 +6424,7 @@ CREATE TABLE `orders` (
   `comments` text,
   `customerNumber` int(11) NOT NULL,
   PRIMARY KEY (`orderNumber`),
-  KEY `customerNumber` (`customerNumber`),
-  CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`customerNumber`) REFERENCES `customers` (`customerNumber`)
+  KEY `customerNumber` (`customerNumber`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `orders` */
