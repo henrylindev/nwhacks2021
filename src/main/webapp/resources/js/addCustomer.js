@@ -1,7 +1,7 @@
 function createCustomer() {
     console.log("called");
     var formObj = gatherFormInfo();
-    axios.post('http://localhost:8080/SReid-final-prep/api/customers/addCustomer'
+    axios.post('http://final-prep-sreid-final.apps.okd4.infoteach.ca/api/customers/addCustomer'
                 + '?customerNumber=' + Math.floor((Math.random() * 10000) + 1000)
                 + '&customerName=' + formObj.customer_name
                 + '&contactLastName=' + formObj.contact_last_name
