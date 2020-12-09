@@ -63,13 +63,12 @@
 					<f:convertDateTime type="date" pattern = "yyyy-MM-dd" />
 					</h:inputText>
 					<h:message for="requiredDate" style="color:red" />
-				<h:outputText value="#{o.requiredDate}" rendered="#{not o.editable}" />
+				<h:outputText value="#{o.requiredDate}" rendered="#{not o.editable}" ><f:convertDateTime pattern = "yyyy-MM-dd" /></h:outputText>
 			</h:column>
 			<h:column>
 				<f:facet name="header">
 					<h:outputText value="Shipped Date"
 						style="font-weight: bold" >
-					
 						</h:outputText>
 				</f:facet>
 				<h:inputText value="#{o.shippedDate}" rendered="#{o.editable}"
@@ -77,7 +76,7 @@
 					<f:convertDateTime type="date" pattern = "yyyy-MM-dd" />
 					</h:inputText>
 					<h:message for="requiredDate" style="color:red" />
-				<h:outputText value="#{o.shippedDate}" rendered="#{not o.editable}" />
+				<h:outputText value="#{o.shippedDate}" rendered="#{not o.editable}" ><f:convertDateTime pattern = "yyyy-MM-dd" /></h:outputText>
 			</h:column>
 			<h:column>
 				<f:facet name="header">
