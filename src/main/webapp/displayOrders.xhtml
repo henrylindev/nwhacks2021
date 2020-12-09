@@ -12,7 +12,9 @@
 <h:body>
 	<h1>Products</h1>
 	<h:form>
-	
+	<h:commandButton value="Save" action="#{orderList.save()}"/>
+		<h:commandButton value="Display Products" action="#{orderList.goToProducts()}"/>
+		<h:commandButton value="Add Product" action="#{orderList.addOrder()}"/>
 	<p>Enter search term.</p>
       <h:inputText value="#{orderList.searchTerm}"/>
       <p><h:commandButton value="Search" action="#{orderList.search}"/></p>
@@ -21,7 +23,7 @@
 			styleClass="products" columnClasses="odd,even">
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="#{msgs.editColumn}" style="font-weight: bold" />
+					<h:outputText value="Save" style="font-weight: bold" />
 				</f:facet>
 				<h:selectBooleanCheckbox value="#{o.editable}" onclick="submit()" />
 			</h:column>
@@ -36,23 +38,29 @@
 			<h:column>
 				<f:facet name="header">
 					<h:outputText value="Order Date"
-						style="font-weight: bold" />
+						style="font-weight: bold" >
+				
+						</h:outputText>
 				</f:facet>
 				<h:inputText id="orderDate" value="#{o.orderDate}" rendered="#{o.editable}"
 					size="10" >
-					<f:convertDateTime pattern = "yyyy-MM-dd" />
+					<f:convertDateTime type="date" pattern = "yyyy-MM-dd" />
 					</h:inputText>
 					<h:message for="orderDate" style="color:red" />
-				<h:outputText value="#{o.orderDate}" rendered="#{not o.editable}" />
+				<h:outputText value="#{o.orderDate}" rendered="#{not o.editable}" >
+				<f:convertDateTime pattern = "yyyy-MM-dd" />
+				</h:outputText>
 			</h:column>
 			<h:column>
 				<f:facet name="header">
 					<h:outputText value="Required Date"
-						style="font-weight: bold" />
+						style="font-weight: bold" >
+						
+						</h:outputText>
 				</f:facet>
 				<h:inputText id="requiredDate" value="#{o.requiredDate}" rendered="#{o.editable}"
 					size="10" >
-					<f:convertDateTime pattern = "yyyy-MM-dd" />
+					<f:convertDateTime type="date" pattern = "yyyy-MM-dd" />
 					</h:inputText>
 					<h:message for="requiredDate" style="color:red" />
 				<h:outputText value="#{o.requiredDate}" rendered="#{not o.editable}" />
@@ -60,11 +68,13 @@
 			<h:column>
 				<f:facet name="header">
 					<h:outputText value="Shipped Date"
-						style="font-weight: bold" />
+						style="font-weight: bold" >
+					
+						</h:outputText>
 				</f:facet>
 				<h:inputText value="#{o.shippedDate}" rendered="#{o.editable}"
 					size="10" >
-					<f:convertDateTime pattern = "yyyy-MM-dd" />
+					<f:convertDateTime type="date" pattern = "yyyy-MM-dd" />
 					</h:inputText>
 					<h:message for="requiredDate" style="color:red" />
 				<h:outputText value="#{o.shippedDate}" rendered="#{not o.editable}" />
@@ -99,17 +109,15 @@
 
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="#{msgs.productDeleteColumn}"
+					<h:outputText value="Delete"
 						style="font-weight: bold" />
 				</f:facet>
-				<h:commandButton value="#{msgs.productDeleteColumn}"
+				<h:commandButton value="Delete"
 					action="#{orderList.deleteOrder(o)}" />
 			</h:column>
 		</h:dataTable>
 		<br/>
-		<h:commandButton value="#{msgs.save}" action="#{orderList.save()}"/>
-		<h:commandButton value="Display Products" action="#{orderList.goToProducts()}"/>
-		<h:commandButton value="Add Product" action="#{orderList.addOrder()}"/>
+		
 	</h:form>
 	<ui:debug/>
 </h:body>

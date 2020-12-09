@@ -12,8 +12,10 @@
 <h:body>
 	<h1>Customers</h1>
 	<h:form>
-	
-	<p>Enter search term.</p>
+	<h:commandButton value="Save" action="#{customerList.save()}"/>
+		<h:commandButton value="Add Customer" action="#{customerList.addCustomer()}"/>
+		<h:commandButton value="Products Page" action="#{customerList.goToProduct()}"/>
+	<p>Search for a customer by name.</p>
       <h:inputText value="#{customerList.searchTerm}"/>
       <p><h:commandButton value="Search" action="#{customerList.search}"/></p>
 	
@@ -21,7 +23,7 @@
 			styleClass="products" columnClasses="odd,even">
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="#{msgs.editColumn}" style="font-weight: bold" />
+					<h:outputText value="Edit" style="font-weight: bold" />
 				</f:facet>
 				<h:selectBooleanCheckbox value="#{c.editable}" onclick="submit()" />
 			</h:column>
@@ -132,20 +134,19 @@
 					size="10" />
 				<h:outputText value="#{c.creditLimit}" rendered="#{not c.editable}" />
 			</h:column>
-			
+			<!--  
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="#{msgs.productDeleteColumn}"
+					<h:outputText value="Delete"
 						style="font-weight: bold" />
 				</f:facet>
-				<h:commandButton value="#{msgs.productDeleteColumn}"
+				<h:commandButton value="Delete"
 					action="#{customerList.deleteCustomer(c)}" />
 			</h:column>
+			-->
 		</h:dataTable>
 		<br/>
-		<h:commandButton value="#{msgs.save}" action="#{customerList.save()}"/>
-		<h:commandButton value="Add Customer" action="#{customerList.addCustomer()}"/>
-		<h:commandButton value="Products Page" action="#{customerList.goToProduct()}"/>
+		
 	</h:form>
 	<ui:debug/>
 </h:body>

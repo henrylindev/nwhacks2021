@@ -21,7 +21,7 @@
 			styleClass="products" columnClasses="odd,even">
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="#{msgs.editColumn}" style="font-weight: bold" />
+					<h:outputText value="Edit" style="font-weight: bold" />
 				</f:facet>
 				<h:selectBooleanCheckbox value="#{od.editable}" onclick="submit()" />
 			</h:column>
@@ -75,15 +75,15 @@
 
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="#{msgs.productDeleteColumn}"
+					<h:outputText value="Delete"
 						style="font-weight: bold" />
 				</f:facet>
-				<h:commandButton value="#{msgs.productDeleteColumn}"
+				<h:commandButton value="Delete"
 					action="#{orderDetailList.deleteOrderDetail(od)}" />
 			</h:column>
 		</h:dataTable>
 		<br/>
-		<h:commandButton value="#{msgs.save}" action="#{orderDetailList.save()}"/>
+		<h:commandButton value="Save" action="#{orderDetailList.save()}"/>
 		<h:commandButton value="Display Products" action="#{orderDetailList.goToProducts()}"/>
 		<h:commandButton value="Add Order Detail" action="#{orderDetailList.addOrderDetail()}"/>
 	</h:form>

@@ -12,8 +12,12 @@
 <h:body>
 	<h1>Products</h1>
 	<h:form>
-	
-	<p>Enter search term.</p>
+	<h:commandButton value="Save" action="#{productList.save()}"/>
+		<h:commandButton value="Display Customers" action="#{productList.goToCustomers()}"/>
+		<h:commandButton value="Add Product" action="#{productList.addProduct()}"/>
+		<h:commandButton value="Display Orders" action="#{productList.goToOrders()}"/>
+		<h:commandButton value="Display Order Details" action="#{productList.goToOrderDetails()}"/>
+	<p>Search for a product by name.</p>
       <h:inputText value="#{productList.searchTerm}"/>
       <p><h:commandButton value="Search" action="#{productList.search}"/></p>
 	
@@ -106,22 +110,19 @@
 				<h:outputText value="#{p.msrp}" rendered="#{not p.editable}" />
 			</h:column>
 			
-			
+			<!--
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="#{msgs.productDeleteColumn}"
+					<h:outputText value="#Delete"
 						style="font-weight: bold" />
 				</f:facet>
-				<h:commandButton value="#{msgs.productDeleteColumn}"
+				<h:commandButton value="Delete"
 					action="#{productList.deleteProduct(p)}" />
 			</h:column>
+			-->
 		</h:dataTable>
 		<br/>
-		<h:commandButton value="#{msgs.save}" action="#{productList.save()}"/>
-		<h:commandButton value="Display Customers" action="#{productList.goToCustomers()}"/>
-		<h:commandButton value="Add Product" action="#{productList.addProduct()}"/>
-		<h:commandButton value="Display Orders" action="#{productList.goToOrders()}"/>
-		<h:commandButton value="Display Orders" action="#{productList.goToOrderDetails()}"/>
+		
 	</h:form>
 	<ui:debug/>
 </h:body>
