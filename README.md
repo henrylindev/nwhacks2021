@@ -1,3 +1,1 @@
-Example of using EJB Sessiion Beans and JPA for simple inventory Example
-
-Uses database, login credentials specified in inventory_mysql.sql 
+http://final-prep-sreid-final.apps.okd4.infoteach.ca/
