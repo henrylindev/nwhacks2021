@@ -11,24 +11,32 @@
       <h:form>  
          <h1>Enter Product</h1>
          <h3>Product Code</h3>
-         <p><h:inputText value="#{product.productCode}"/></p>
+         <p><h:inputText id="productCode" value="#{product.productCode}" required="true" requiredMessage="Product Code is required"/></p>
+         <h:message for="productCode" style="color:red" />
          <h3>Product Name</h3>
-         <p><h:inputText value="#{product.productName}"/></p>
+         <p><h:inputText id="productName"  value="#{product.productName}" required="true" requiredMessage="Product Name is required"/></p>
+         <h:message for="productName" style="color:red" />
          <h3>Product Line</h3>
-         <p><h:inputText value="#{product.productLine}"/></p>
+         <p><h:inputText id="productLine"  value="#{product.productLine}" required="true" requiredMessage="Product Line is required"/></p>
+         <h:message for="productLine" style="color:red" />
          <h3>Product Scale</h3>
-         <p><h:inputText value="#{product.productScale}"/></p>
+         <p><h:inputText id="productScale"  value="#{product.productScale}" required="true" requiredMessage="Product Scale is required"/></p>
+         <h:message for="productScale" style="color:red" />
          <h3>Product Vendor</h3>
-         <p><h:inputText value="#{product.productVendor}"/></p>
+         <p><h:inputText id="productVendor" value="#{product.productVendor}" required="true" requiredMessage="Product Vendor is Required"/></p>
+         <h:message for="productVendor" style="color:red" />
          <h3>Product Description</h3>
-         <p><h:inputText value="#{product.productDescription}"/></p>
+         <p><h:inputText id="productDescription" value="#{product.productDescription}" required="true" requiredMessage="Product description is required"/></p>
+         <h:message for="productDescription" style="color:red" />
          <h3>Quantity in Stock</h3>
-         <p><h:inputText value="#{product.quantityInStock}"/></p>
+         <p><h:inputText id="productQuantity" value="#{product.quantityInStock}" required="true" requiredMessage="Quantity in stock is required"/></p>
+         <h:message for="productQuantity" style="color:red" />
          <h3>Buy Price</h3>
-         <p><h:inputText value="#{product.buyPrice}"/></p>
+         <p><h:inputText id="productPrice" value="#{product.buyPrice}" required="true" requiredMessage="Buy Price is required"/></p>
+         <h:message for="productPrice" style="color:red" />
          <h3>MSRP</h3>
-         <p><h:inputText value="#{product.msrp}"/></p>
-         
+         <p><h:inputText id="productMSRP" value="#{product.msrp}" required="true" requiredMessage="MSRP is required"/></p>
+         <h:message for="productMSRP" style="color:red" />
          <p><h:commandButton value="Add Product" action="#{product.addProduct()}"/></p>
       </h:form>
       

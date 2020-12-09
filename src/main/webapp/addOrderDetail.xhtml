@@ -11,17 +11,21 @@
       <h:form>  
          <h1>Enter Order Detail</h1>
          <h3>Order Number</h3>
-         <p><h:inputText value="#{orderDetail.orderNumber}"/></p>
+         <p><h:inputText id="orderNumber" value="#{orderDetail.orderNumber}" required="true" requiredMessage="Order Number is required"/></p>
+         <h:message for="orderNumber" style="color:red" />
          <h3>Product Code</h3>
-         <p><h:inputText value="#{orderDetail.productCode}"/></p>
+         <p><h:inputText id="productCode" value="#{orderDetail.productCode}" required="true" requiredMessage="Product Code is required"/></p>
+         <h:message for="productCode" style="color:red" />
          <h3>Quantity Ordered</h3>
-         <p><h:inputText value="#{orderDetail.quantityOrdered}"/></p>
+         <p><h:inputText id="quantityOrdered" value="#{orderDetail.quantityOrdered}" required="true" requiredMessage="Quantity Ordered is required"/></p>
+         <h:message for="quantityOrdered" style="color:red" />
          <h3>Price Each</h3>
-         <p><h:inputText value="#{orderDetail.priceEach}"/></p>
+         <p><h:inputText id="priceEach" value="#{orderDetail.priceEach}" required="true" requiredMessage="Price Each is required"/></p>
+         <h:message for="priceEach" style="color:red" />
          <h3>Order Line Number</h3>
-         <p><h:inputText value="#{orderDetail.orderLineNumber}"/></p>
-         
-         <p><h:commandButton value="Add Order Detail" action="#{orderDetail.addOrderDetail()}"/></p>
+         <p><h:inputText id="orderLinenumber" value="#{orderDetail.orderLineNumber}" required="true" requiredMessage="Order Line number is required"/></p>
+         <h:message for="orderLinenumber" style="color:red" />
+         <p><h:commandButton value="Add Order Detail" action="#{orderDetail.addOrderDetail()}" required="true" requiredMessage="Customer Number is required"/></p>
       </h:form>
       
    </h:body>

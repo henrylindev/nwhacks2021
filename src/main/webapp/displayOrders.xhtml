@@ -7,15 +7,15 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<h:outputStylesheet library="css" name="styles.css" />
-	<title>Products</title>
+	<title>Orders</title>
 </h:head>
 <h:body>
-	<h1>Products</h1>
+	<h1>Orders</h1>
 	<h:form>
 	<h:commandButton value="Save" action="#{orderList.save()}"/>
-		<h:commandButton value="Display Products" action="#{orderList.goToProducts()}"/>
-		<h:commandButton value="Add Product" action="#{orderList.addOrder()}"/>
-	<p>Enter search term.</p>
+		<h:commandButton value="Back to Display Products" action="#{orderList.goToProducts()}"/>
+		<h:commandButton value="Add Order" action="#{orderList.addOrder()}"/>
+	<p>Search for an order by number.</p>
       <h:inputText value="#{orderList.searchTerm}"/>
       <p><h:commandButton value="Search" action="#{orderList.search}"/></p>
 	

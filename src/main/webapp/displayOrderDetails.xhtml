@@ -12,7 +12,9 @@
 <h:body>
 	<h1>Products</h1>
 	<h:form>
-	
+	<h:commandButton value="Save" action="#{orderDetailList.save()}"/>
+		<h:commandButton value="Display Products" action="#{orderDetailList.goToProducts()}"/>
+		<h:commandButton value="Add Order Detail" action="#{orderDetailList.addOrderDetail()}"/>
 	<p>Enter search term.</p>
       <h:inputText value="#{orderDetailList.searchTerm}"/>
       <p><h:commandButton value="Search" action="#{orderDetailList.search}"/></p>
@@ -83,9 +85,7 @@
 			</h:column>
 		</h:dataTable>
 		<br/>
-		<h:commandButton value="Save" action="#{orderDetailList.save()}"/>
-		<h:commandButton value="Display Products" action="#{orderDetailList.goToProducts()}"/>
-		<h:commandButton value="Add Order Detail" action="#{orderDetailList.addOrderDetail()}"/>
+		
 	</h:form>
 	<ui:debug/>
 </h:body>

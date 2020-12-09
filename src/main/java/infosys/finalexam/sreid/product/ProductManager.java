@@ -9,9 +9,13 @@ import javax.enterprise.context.Dependent;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 
 @Dependent
 @Stateless
+@Path("/stuff")
 public class ProductManager implements Serializable {
     @PersistenceContext(unitName="inventory-jpa") EntityManager em;
     
@@ -46,6 +50,8 @@ public class ProductManager implements Serializable {
         return prodarray;
     }
     
+    @GET
+    @Produces("application/json")
     public Product[] getAll() {
         TypedQuery<Product> query = em.createQuery("select p from Product p",
                 Product.class); 

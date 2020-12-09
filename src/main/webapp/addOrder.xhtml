@@ -11,25 +11,29 @@
       <h:form>  
          <h1>Order</h1>
          <h3>Order Number</h3>
-         <p><h:inputText value="#{order.orderNumber}"/></p>
+         <p><h:inputText id="orderNumber" value="#{order.orderNumber}" required="true" requiredMessage="Order Number is required"/></p>
+         <h:message for="orderNumber" style="color:red" />
          <h3>Order Date</h3>
-         <p><h:inputText id="orderDate" value="#{order.orderDate}">
+         <p><h:inputText id="orderDate" value="#{order.orderDate}" required="true" requiredMessage="Customer Number is required">
          <f:convertDateTime pattern = "yyyy-MM-dd" /></h:inputText>
          <h:message for="orderDate" style="color:red" /></p>
          <h3>Required Date</h3>
-         <p><h:inputText id="requiredDate" value="#{order.requiredDate}">
+         <p><h:inputText id="requiredDate" value="#{order.requiredDate}" required="true" requiredMessage="Required date is required">
          <f:convertDateTime pattern = "yyyy-MM-dd" /></h:inputText>
          <h:message for="requiredDate" style="color:red" /></p>
          <h3>Shipped Date</h3>
-         <p><h:inputText id="shippedDate" value="#{order.shippedDate}"><f:convertDateTime pattern = "yyyy-MM-dd" />
+         <p><h:inputText id="shippedDate" value="#{order.shippedDate}" required="true" requiredMessage="Shipped date is required">
+         <f:convertDateTime pattern = "yyyy-MM-dd" />
          </h:inputText><h:message for="shippedDate" style="color:red" /></p>
+         <h:message for="shippedDate" style="color:red" />
          <h3>Status</h3>
-         <p><h:inputText value="#{order.status}"/></p>
+         <p><h:inputText id="status" value="#{order.status}" required="true" requiredMessage="Status is required"/></p>
+         <h:message for="status" style="color:red" />
          <h3>Comments</h3>
-         <p><h:inputText value="#{order.comments}"/></p>
+         <p><h:inputText id="comments" value="#{order.comments}"/></p>
          <h3>Customer Number</h3>
-         <p><h:inputText value="#{order.customerNumber}"/></p>
-         
+         <p><h:inputText id="customerNumber" value="#{order.customerNumber}" required="true" requiredMessage="Customer Number is required"/></p>
+         <h:message for="customerNumber" style="color:red" />
          <p><h:commandButton value="Add Order" action="#{order.addOrder()}"/></p>
       </h:form>
       
