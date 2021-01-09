@@ -1,4 +1,4 @@
-package nwhacks.backend.employee;
+package nwhacks.backend.timesheetrow;
 
 public class TimesheetRow {
     
