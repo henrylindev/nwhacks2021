@@ -1,25 +1,49 @@
 package nwhacks.backend.cost;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 import java.util.UUID;
 
-public class Cost {
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.Table;
 
+import org.hibernate.annotations.Type;
+
+import javax.persistence.InheritanceType;
+
+//@Entity
+//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+//@Table(name="cost")
+@Named("cost")
+@SessionScoped
+public class Cost implements Serializable {
+
+    @Id
+    @Column(name="materialcostid")
+    @Type(type = "uuid-char")
      private UUID costId;
      
+    @Column(name="projectid")
      private UUID projectId;
      
+    @Column(name="costdate")
      private Date date;
      
+    @Column(name="costamount")
      private BigDecimal amount;
      
+    @Column(name="injournal")
      private boolean inJournal;
      
      public Cost() {
          super();
-         
      }
      
      public Cost(UUID costId, UUID projectId, Date date, BigDecimal amount, boolean inJournal) {
@@ -38,18 +62,18 @@ public class Cost {
     protected UUID getCostId() {
         return costId;
     }
-//    
-//    protected void setCostId(UUID costId) {
-//        this.costId = costId;
-//    }
+    
+    protected void setCostId(UUID costId) {
+        this.costId = costId;
+    }
 
     protected UUID getProjectId() {
         return projectId;
     }
 
-//    protected void setProjectId(UUID projectId) {
-//        this.projectId = projectId;
-//    }
+    protected void setProjectId(UUID projectId) {
+        this.projectId = projectId;
+    }
 
     protected Date getDate() {
         return date;

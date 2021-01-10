@@ -17,29 +17,29 @@ import nwhacks.backend.employee.Employee;
 
 public class CostList implements Serializable {
 
-//    @Inject @Dependent private MaterialManager materialManager;
-//    @Inject @Dependent private WageManager wageManager;
-//    
-//    private List<EditableCost> list;
-//        
-//    @Inject Conversation conversation;
-//    
-//    public List<EditableCost> getList() {
-//        if(!conversation.isTransient()) {
-//            conversation.end();
-//        }
-//        conversation.begin();
-//        if (list == null) {
-//            refreshList();
-//        }
-//        return list;
-//    }
-//
+    @Inject @Dependent private MaterialManager materialManager;
+    @Inject @Dependent private WageManager wageManager;
+    
+    private List<EditableCost> list;
+        
+    @Inject Conversation conversation;
+    
+    public List<EditableCost> getList() {
+        if(!conversation.isTransient()) {
+            conversation.end();
+        }
+        conversation.begin();
+        if (list == null) {
+            refreshList();
+        }
+        return list;
+    }
+
 //    public List<EditableEmployee> refreshList() {
 //        
-//        MaterialCost[] materialCost = MaterialCostManager.getAll();
+//        MaterialCost[] materialCost = materialManager.getAll();
 //        
-//        WageCost wageCost[] = WageCostManager.getAll();
+////        WageCost wageCost[] = WageCostManager.getAll();
 //        
 //        MaterialList = new ArrayList<EditableCost>();
 //        WageList = new ArrayList<EditableCost>();
@@ -54,6 +54,29 @@ public class CostList implements Serializable {
 //        
 //        System.out.println("running");
 //        return list;
+//    }
+    
+    public List<EditableCost> refreshList() {
+        MaterialCost[] materialCosts = materialManager.getAll();
+        WageCost wageCosts[] = wageManager.getAll();
+        
+        list = new ArrayList<EditableCost>();
+        
+//        for (int i = 0; i < materialCosts.length; i++) {
+//            list.add(new EditableCost(materialCosts[i]));
+//        }
+//        for (int i = 0; i < (materialCosts.length + wageCosts.length); i++) {
+//            list.add(new EditableCost(wageCosts[i]));
+//        }
+        
+        System.out.println("running");
+        return list;
+    }
+    
+//    public Cost search() {
+//        Cost c = materialManager.search(searchTerm);
+//        System.out.println("employees search: " + c);
+//        return c;
 //    }
 
 }
