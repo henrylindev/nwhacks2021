@@ -10,6 +10,10 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 
 import nwhacks.backend.employee.Employee;
 import nwhacks.backend.employee.EmployeeManager;
@@ -19,10 +23,13 @@ import nwhacks.backend.timesheet.Timesheet;
 
 @Dependent
 @Stateless
+@Path("/rows")
 public class RowManager implements Serializable {
 	@PersistenceContext(unitName="inventory-jpa") EntityManager em;
 	@Inject @Dependent private ProjectManager projectManager;
 	
+	@GET
+    @Produces("application/json")
 	public TimesheetRow[] getAll() {
 		TypedQuery<TimesheetRow> query = em.createQuery("select t from TimesheetRow t",
         		TimesheetRow.class); 
@@ -48,4 +55,10 @@ public class RowManager implements Serializable {
         return timesheet;
     }
 	
+	@Path("/{projName}")
+    @GET
+    @Produces("application/json")
+	public TimesheetRow[] searchREST(@PathParam("projName") String projName) {
+	    return search(projName);
+    }
 }
