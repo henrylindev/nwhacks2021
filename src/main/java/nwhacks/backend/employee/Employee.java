@@ -2,7 +2,7 @@ package nwhacks.backend.employee;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-
+import java.util.UUID;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -23,7 +23,7 @@ public class Employee implements Serializable {
 	
 	@Id
 	@Column(name="id")
-	protected String id;
+	protected UUID id;
 	
 	@Column(name="salary")
 	protected BigDecimal salary;
@@ -36,19 +36,19 @@ public class Employee implements Serializable {
 	
 	public Employee() {}
 
-	public Employee(String id, BigDecimal salary, BigDecimal benefits, Short netRate) {
+	public Employee(UUID id, BigDecimal salary, BigDecimal benefits, Short netRate) {
 		super();
-		this.id = id;
+		this.id = UUID.randomUUID();
 		this.salary = salary;
 		this.benefits = benefits;
 		this.netRate = netRate;
 	}
 
-	public String getId() {
+	public UUID getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(UUID id) {
 		this.id = id;
 	}
 
@@ -76,6 +76,4 @@ public class Employee implements Serializable {
 		this.netRate = netRate;
 	}
 
-	
-	
 }

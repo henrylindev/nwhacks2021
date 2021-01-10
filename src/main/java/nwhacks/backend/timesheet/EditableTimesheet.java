@@ -1,6 +1,7 @@
 package nwhacks.backend.timesheet;
 
 import java.sql.Date;
+import java.util.UUID;
 
 import nwhacks.backend.timesheetrow.TimesheetRow;
 
@@ -17,7 +18,7 @@ public class EditableTimesheet extends Timesheet {
         super(t.getSheetId(), t.getProjectId(), t.getRowArray(), t.getEmpId(), t.getDate());
     }
     
-    public EditableTimesheet(String id, String projectId, TimesheetRow[] rows, String empId, Date date) {
+    public EditableTimesheet(UUID id, UUID projectId, TimesheetRow[] rows, UUID empId, Date date) {
         super(id, projectId, rows, empId, date);
     }
 

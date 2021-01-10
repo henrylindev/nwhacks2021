@@ -35,9 +35,6 @@ public class Cost {
         this.inJournal = inJournal;
     }
 
-
-
-
     protected UUID getCostId() {
         return costId;
     }

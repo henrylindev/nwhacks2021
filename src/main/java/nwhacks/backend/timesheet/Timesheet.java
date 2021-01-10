@@ -2,6 +2,7 @@ package nwhacks.backend.timesheet;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.UUID;
 
 import javax.inject.Inject;
 import javax.persistence.Column;
@@ -19,10 +20,10 @@ public class Timesheet {
         super();
     }
     
-    public Timesheet(String sheetId, String projectId, TimesheetRow[] rowArray,
-            String empId, Date date) {
+    public Timesheet(UUID sheetId, UUID projectId, TimesheetRow[] rowArray,
+            UUID empId, Date date) {
         super();
-        this.sheetId = sheetId;
+        this.sheetId = UUID.randomUUID();;
         this.projectId = projectId;
         this.rowArray = rowArray;
         this.empId = empId;
@@ -31,16 +32,16 @@ public class Timesheet {
 
     @Id
     @Column(name="id")
-    private String sheetId;
+    private UUID sheetId;
 
     @Column(name="salary")
-    private String projectId;
+    private UUID projectId;
     
     @Column(name="benefits")
     private TimesheetRow rowArray[];
     
     @Column(name="netrate")
-    private String empId;
+    private UUID empId;
     
     @Column(name="data")
     private Date date;
@@ -62,28 +63,28 @@ public class Timesheet {
     /**
      * @return the sheetId
      */
-    public String getSheetId() {
+    public UUID getSheetId() {
         return sheetId;
     }
 
     /**
      * @param sheetId the sheetId to set
      */
-    public void setSheetId(String sheetId) {
+    public void setSheetId(UUID sheetId) {
         this.sheetId = sheetId;
     }
 
     /**
      * @return the projectId
      */
-    public String getProjectId() {
+    public UUID getProjectId() {
         return projectId;
     }
 
     /**
      * @param projectId the projectId to set
      */
-    public void setProjectId(String projectId) {
+    public void setProjectId(UUID projectId) {
         this.projectId = projectId;
     }
 
@@ -104,14 +105,14 @@ public class Timesheet {
     /**
      * @return the empId
      */
-    public String getEmpId() {
+    public UUID getEmpId() {
         return empId;
     }
 
     /**
      * @param empId the empId to set
      */
-    public void setEmpId(String empId) {
+    public void setEmpId(UUID empId) {
         this.empId = empId;
     }
 

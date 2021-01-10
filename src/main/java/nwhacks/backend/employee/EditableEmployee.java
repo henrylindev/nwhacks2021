@@ -2,6 +2,7 @@ package nwhacks.backend.employee;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.UUID;
 
 public class EditableEmployee extends Employee implements Serializable {
 	private boolean editable = false;
@@ -15,7 +16,7 @@ public class EditableEmployee extends Employee implements Serializable {
 		super(e.id, e.salary, e.benefits, e.netRate);
 	}
 
-	public EditableEmployee(String id, BigDecimal salary, BigDecimal benefits, Short netRate) {
+	public EditableEmployee(UUID id, BigDecimal salary, BigDecimal benefits, Short netRate) {
 		super(id, salary, benefits, netRate);
 	}
 
