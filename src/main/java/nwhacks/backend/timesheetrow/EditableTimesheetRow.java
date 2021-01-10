@@ -1,5 +1,8 @@
 package nwhacks.backend.timesheetrow;
 
+import java.math.BigDecimal;
+import java.util.UUID;
+
 public class EditableTimesheetRow extends TimesheetRow {
 
     private boolean editable = false;
@@ -13,7 +16,7 @@ public class EditableTimesheetRow extends TimesheetRow {
         super(t.getSheetID(), t.getHours(), t.getProjectID());
     }
     
-    public EditableTimesheetRow(String sheetId, double hours, String projectId) {
+    public EditableTimesheetRow(UUID sheetId, Short hours, UUID projectId) {
         super(sheetId, hours, projectId);
     }
 

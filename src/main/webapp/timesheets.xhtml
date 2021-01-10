@@ -5,42 +5,28 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui = "http://java.sun.com/jsf/facelets">
    <h:head>
-      <title>Employees</title>
+      <title>Timesheets</title>
    </h:head>
    <h:body>
       <h:form>  
-      <p>Search for an employee by username.</p>
-      <h:inputText value="#{employeeList.searchTerm}"/>
-      <p><h:commandButton value="Search" action="#{employeeList.search}"/></p>
-      <p>Search for timesheet by employee username.</p>
+      <p>Search for an employee by ID.</p>
       <h:inputText value="#{timesheetList.searchTerm}"/>
       <p><h:commandButton value="Search" action="#{timesheetList.search}"/></p>
-      <p>Search for project by project name.</p>
-      <h:inputText id="projname" value="#{projectList.searchTerm}"/>
-      <p><h:commandButton value="Search" action="#{projectList.search}"/></p>
-      <h:message for="projname" style="color:red" />
-      <p>Search for project by project id 0ccc5e65-e521-4978-ae72-faf6aa5d1d92</p>
-      <p><h:commandButton  value="Search" action="#{projectList.searchById}"/></p>
       
-      <p>Search for rows by project name.</p>
-      <h:inputText value="#{timesheetRowList.searchTerm}"/>
-      <p><h:commandButton value="Search" action="#{timesheetRowList.search}"/></p>
-      
-      <!-- 
-         <h:dataTable value="#{employeeList.list}" var="e"
+         <h:dataTable value="#{timesheetList.list}" var="t"
 			styleClass="products" columnClasses="odd,even">
 			<h:column>
 				<f:facet name="header">
 					<h:outputText value="Edit" style="font-weight: bold" />
 				</f:facet>
-				<h:selectBooleanCheckbox value="#{e.editable}" onclick="submit()" />
+				<h:selectBooleanCheckbox value="#{t.editable}" onclick="submit()" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="Employee ID"
+					<h:outputText value="Timesheet ID"
 						style="font-weight: bold" />
 				</f:facet>
-				<h:outputText value="#{e.id}" />
+				<h:outputText value="#{t.sheetId}" />
 			</h:column>
 
 			<h:column>
@@ -72,7 +58,6 @@
 			</h:column>
 			
 		</h:dataTable>
-		 -->
       </h:form>
       
    </h:body>

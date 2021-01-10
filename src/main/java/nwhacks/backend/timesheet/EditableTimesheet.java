@@ -15,11 +15,11 @@ public class EditableTimesheet extends Timesheet {
     }
     
     public EditableTimesheet(Timesheet t) {
-        super(t.getSheetId(), t.getProjectId(), t.getRowArray(), t.getEmpId(), t.getDate());
+        super(t.getSheetId(), t.getEmpId(), t.getDate());
     }
     
-    public EditableTimesheet(UUID id, UUID projectId, TimesheetRow[] rows, UUID empId, Date date) {
-        super(id, projectId, rows, empId, date);
+    public EditableTimesheet(UUID id, UUID empId, Date date) {
+        super(id, empId, date);
     }
 
     /**

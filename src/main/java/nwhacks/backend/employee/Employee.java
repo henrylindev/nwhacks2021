@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.hibernate.annotations.Type;
+
 @Entity
 @Table(name="employees")
 @Named("employee")
@@ -23,7 +25,11 @@ public class Employee implements Serializable {
 	
 	@Id
 	@Column(name="id")
+	@Type(type = "uuid-char")
 	protected UUID id;
+	
+	@Column(name="empname")
+	protected String name;
 	
 	@Column(name="salary")
 	protected BigDecimal salary;
@@ -36,7 +42,7 @@ public class Employee implements Serializable {
 	
 	public Employee() {}
 
-	public Employee(UUID id, BigDecimal salary, BigDecimal benefits, Short netRate) {
+	public Employee(UUID id, String name, BigDecimal salary, BigDecimal benefits, Short netRate) {
 		super();
 		this.id = UUID.randomUUID();
 		this.salary = salary;
@@ -74,6 +80,18 @@ public class Employee implements Serializable {
 
 	public void setNetRate(Short netRate) {
 		this.netRate = netRate;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String toString() {
+		return this.name;
 	}
 
 }

@@ -1,23 +1,25 @@
-package nwhacks.backend.employee;
+package nwhacks.backend.project;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.UUID;
 
-public class EditableEmployee extends Employee implements Serializable {
+import javax.enterprise.context.ConversationScoped;
+import javax.inject.Named;
+
+import nwhacks.backend.employee.Employee;
+
+
+public class EditableProject extends Project implements Serializable {
 	private boolean editable = false;
 	private boolean deletable = false;
 	
-	public EditableEmployee() {
-		super();
+	public EditableProject(Project p) {
+		super(p.projectId, p.projectName);
 	}
-
-	public EditableEmployee(Employee e) {
-		super(e.id, e.name, e.salary, e.benefits, e.netRate);
-	}
-
-	public EditableEmployee(UUID id, String name, BigDecimal salary, BigDecimal benefits, Short netRate) {
-		super(id, name, salary, benefits, netRate);
+	
+	public EditableProject(UUID projectId, String projectName) {
+		super(projectId, projectName);
 	}
 
 	public boolean isEditable() {
@@ -35,5 +37,7 @@ public class EditableEmployee extends Employee implements Serializable {
 	public void setDeletable(boolean deletable) {
 		this.deletable = deletable;
 	}
+	
+	
 	
 }
