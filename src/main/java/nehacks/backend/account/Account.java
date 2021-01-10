@@ -1,4 +1,4 @@
-package nwhacks.backend.employee;
+package nehacks.backend.account;
 
 public class Account {
 
