@@ -1,10 +1,10 @@
-#Business Process Management (BPM) Dashboard
+# Business Process Management (BPM) Dashboard
 A job costing and payroll system.
 
-#Motivation
+# Motivation
 This project was developed for NWHacks 2021.
 
-#Technologies Used
+# Technologies Used
 * Java
 * HTML5
 * CSS3
